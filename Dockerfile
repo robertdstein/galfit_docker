@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
     libopenblas-dev \
     liblapack-dev \
     wget \
+    xterm \
     && rm -rf /var/lib/apt/lists/*
 
 FROM base AS download
@@ -40,6 +41,8 @@ RUN tar -xzf galfit3-debian64.tar.gz -C $SRC_DIR \
     && rm galfit3-debian64.tar.gz
 
 RUN ln -s $SRC_DIR/galfit /usr/bin/galfit
+
+# apt-get install xterm -y
 
 #RUN alias galfit /galfit/galfit
 
